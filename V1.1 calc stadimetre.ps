@@ -1,0 +1,471 @@
+%!		%declare file to be PostScript
+
+
+
+90 rotate		% met la feuille a l'horizontale 
+0.5 setlinewidth	% reglage de la largeur des traits
+/Times 7 selectfont 	%select your font
+
+
+
+
+
+
+
+
+
+
+
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   IMPORTANT   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+%
+% formule utilisée : 		f(x) = 151 x log2(X)
+% formule des MRAD : 		f(x) = 151 x log2(X) -151	(poour compenser le fait que l'axe commence à 2)
+%
+%
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   IMPORTANT   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/arranger{1 index exch 1 index}def			% permet d'organiser la pile ( A B -> A A B A ) pour servir d'entrée a la fonction de dessin
+
+/opl13{decalage_horizontal exch Hauteur_Ligne exch sub lineto}def			% execute l'etape 1 (tracer un trait jusqu'a la base de la graduation suivante) et 
+							% l'etape 3 (descendre du haut de la graduation pour se preparer a la suivante)
+
+/opl2{decalage_horizontal exch sub exch Hauteur_Ligne exch sub lineto}def		% execute l'etape 2 (trace une graduation vertical dont la taille et le sens depend de la pile)
+
+/graduation{arranger opl13 opl2 opl13}def		% execute l'ensemble des fonction ci dessus (opl13 est executé avant ET apres opl2)
+
+
+
+
+
+
+
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+%
+%ligne des miliemes (MRAD)
+%
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+/Hauteur_Ligne -50 def	% defini la hauteur du point de depart pour la ligne des milliemes (normalement constant pour les 4 lignes)
+/decalage_horizontal 347 def	% defini la largeur du point de depart pour la ligne des milliemes (propre à chaque lignes)
+decalage_horizontal Hauteur_Ligne moveto	% va au point de depart
+
+
+000 20 graduation		% marque 2
+011 10 graduation
+021 10 graduation
+030 10 graduation
+040 10 graduation
+
+049 20 graduation		% marque 2.5
+057 10 graduation
+065 10 graduation
+073 10 graduation
+081 10 graduation
+
+088 20 graduation		% marque 3
+095 05 graduation
+102 05 graduation
+109 05 graduation
+116 05 graduation
+122 10 graduation
+128 05 graduation
+134 05 graduation
+140 05 graduation
+145 05 graduation
+
+151 20 graduation		% marque 4
+156 05 graduation
+162 05 graduation
+167 05 graduation
+172 05 graduation
+177 10 graduation
+181 05 graduation
+186 05 graduation
+191 05 graduation
+195 05 graduation
+
+200 20 graduation		% marque 5
+220 10 graduation
+
+239 20 graduation		% marque 6
+257 10 graduation
+
+273 20 graduation		% marque 7
+288 10 graduation
+
+302 20 graduation		% marque 8
+315 10 graduation
+
+328 20 graduation		% marque 9
+339 10 graduation
+
+351 20 graduation		% marque 10
+371 10 graduation
+
+390 20 graduation		% marque 12
+408 10 graduation
+
+424 20 graduation		% marque 14
+439 10 graduation
+
+453 20 graduation		% marque 16
+466 10 graduation
+
+479 20 graduation		% marque 18
+490 10 graduation
+
+502 20 graduation		% marque 20
+
+
+
+
+decalage_horizontal 35 sub 	Hauteur_Ligne -020 sub 	moveto (angle(MRAD)) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 000 sub 	moveto (2) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 049 sub 	moveto (2,5) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 088 sub 	moveto (3) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 151 sub 	moveto (4) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 200 sub 	moveto (5) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 239 sub 	moveto (6) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 302 sub 	moveto (8) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 350 sub 	moveto (10) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 390 sub 	moveto (12) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 423 sub 	moveto (14) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 453 sub 	moveto (16) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 479 sub 	moveto (18) show
+
+decalage_horizontal 35 sub 	Hauteur_Ligne 501 sub 	moveto (20) show
+
+
+
+
+
+
+
+
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+%
+% repere de lecture
+%
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+/Hauteur_Ligne -50 def	%defini la hauteur du point de depart de la ligne 2
+/decalage_horizontal 477 def	%defini la largeur du point de depart de la ligne 2
+
+decalage_horizontal 		Hauteur_Ligne 		moveto
+decalage_horizontal 		Hauteur_Ligne 501 sub 	lineto
+decalage_horizontal 		Hauteur_Ligne 200 sub 	moveto
+decalage_horizontal 20 add 	Hauteur_Ligne 200 sub 	lineto
+
+
+
+decalage_horizontal 10 add 	Hauteur_Ligne 190 sub 	moveto (lire la distance) show
+decalage_horizontal 30 add 	Hauteur_Ligne 200 sub 	moveto (ici) show
+
+
+
+
+
+
+
+
+
+
+
+
+
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+%
+% ligne du front (m)
+%
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+/Hauteur_Ligne -201 def	% defini la hauteur (ordonnee) du point de depart pour la ligne 3
+/decalage_horizontal 623 def	% defini la largeur (abscisse) du point de depart pour la ligne 3
+decalage_horizontal Hauteur_Ligne moveto	% va au point de depart
+
+
+-151 -20 graduation	% marque 0.5
+-130 -05 graduation
+
+-111 -10 graduation	% marque 0.6
+-094 -05 graduation
+
+-078 -10 graduation	% marque 0.7
+-063 -05 graduation
+
+-049 -10 graduation	% marque 0.8
+-035 -05 graduation
+
+-023 -10 graduation	% marque 0.9
+-011 -05 graduation
+
+000 -20 graduation	% marque 1
+021 -10 graduation
+040 -10 graduation
+057 -10 graduation
+073 -10 graduation
+
+088 -20 graduation	% marque 1.5
+102 -10 graduation
+116 -10 graduation
+128 -10 graduation
+140 -10 graduation
+
+151 -20 graduation	% marque 2
+161 -10 graduation
+172 -10 graduation
+181 -10 graduation
+191 -10 graduation
+
+200 -20 graduation	% marque 2.5
+208 -10 graduation
+216 -10 graduation
+224 -10 graduation
+232 -10 graduation
+
+239 -20 graduation	% marque 3
+246 -05 graduation
+253 -05 graduation
+260 -05 graduation
+267 -05 graduation
+273 -10 graduation
+279 -05 graduation
+285 -05 graduation
+290 -05 graduation
+296 -05 graduation
+
+302 -20 graduation	% marque 4
+307 -05 graduation
+313 -05 graduation
+317 -05 graduation
+323 -05 graduation
+328 -10 graduation
+332 -05 graduation
+337 -05 graduation
+342 -05 graduation
+346 -05 graduation
+
+351 -20 graduation	% marque 5
+
+
+
+decalage_horizontal 15 add 	Hauteur_Ligne -170 sub 	moveto (front(m)) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne -151 sub 	moveto (0.5) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne -111 sub 	moveto (0.6) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne -078 sub 	moveto (0.7) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne -049 sub 	moveto (0.8) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne -023 sub 	moveto (0.9) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne 000 sub 	moveto (1) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne 088 sub 	moveto (1.5) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne 151 sub 	moveto (2) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne 200 sub 	moveto (2.5) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne 239 sub 	moveto (3) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne 302 sub 	moveto (4) show
+
+decalage_horizontal 25 add 	Hauteur_Ligne 350 sub 	moveto (5) show
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+%
+% ligne de la distance (m)
+%
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+/Hauteur_Ligne -50 def	% defini la hauteur du point de depart pour la ligne 4
+/decalage_horizontal 753 def	% defini la largeur du point de depart pour la ligne 4
+decalage_horizontal Hauteur_Ligne moveto	% va au point de depart
+
+
+000 20 graduation		% marque 100
+021 10 graduation
+040 10 graduation
+057 10 graduation
+073 10 graduation
+
+088 20 graduation		% marque 150
+102 10 graduation
+116 10 graduation
+128 10 graduation
+140 10 graduation
+
+151 20 graduation		% marque 200
+177 10 graduation
+
+200 20 graduation		% marque 250
+220 10 graduation
+
+239 20 graduation		% marque 300
+273 10 graduation
+
+302 20 graduation		% marque 400
+328 10 graduation
+
+351 20 graduation		% marque 500
+371 10 graduation
+
+390 20 graduation		% marque 600
+408 10 graduation
+
+423 20 graduation		% marque 700
+439 10 graduation
+
+453 20 graduation		% marque 800
+466 10 graduation
+
+479 20 graduation		% marque 900
+490 10 graduation
+
+501 20 graduation		% marque 1000
+
+
+
+decalage_horizontal 35 sub 	Hauteur_Ligne -020 sub 	moveto (dist(m)) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 000 sub 	moveto (100) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 088 sub 	moveto (150) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 151 sub 	moveto (200) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 200 sub 	moveto (250) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 239 sub 	moveto (300) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 302 sub 	moveto (400) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 350 sub 	moveto (500) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 390 sub 	moveto (600) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 423 sub 	moveto (700) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 453 sub 	moveto (800) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 479 sub 	moveto (900) show
+
+decalage_horizontal 45 sub 	Hauteur_Ligne 501 sub 	moveto (1000) show
+
+
+
+
+
+
+
+
+stroke				% dessine les trais (pour que les traits soit noir)
+
+
+
+%----------------------------------------------------------------------
+%
+% reperes de construction
+%
+%----------------------------------------------------------------------
+
+
+0.5 0.5 0.5 setrgbcolor		% passe la couleur en gris
+
+
+274 	0 	moveto		% dessine la double ligne à plier
+274 	-650 	lineto		%
+276 	0 	moveto		%
+276 	-650 	lineto		%
+
+556 	0 	moveto		% dessine la separation entre mobile et fixe (à decouper)
+556 	-650 	lineto		%
+
+349 	-50 	moveto		% dessine le rectangle gris à retirer (partie fixe)
+349 	-550 	lineto		%
+475 	-550 	lineto		%
+475 	-50 	lineto		%
+349 	-50 	lineto		%
+
+377  	-80 	moveto (plier la double ligne grise) show
+377  	-90 	moveto (et couper les autres) show
+
+377  	-400 	moveto (retirer ce rectangle gris) show
+
+
+stroke				% dessine les trais (pour que les traits soit gris)
+0 0 0 setrgbcolor		% passe la couleur en noir
+
+50  	-30 	moveto (utilisation :) show
+70  	-50 	moveto (glisser la partie MOBILE (Front et Dist)) show
+70  	-60 	moveto (derriere la partie FIXE(angle)) show
+
+70  	-80 	moveto (faire correspondre l'angle observe (partie FIXE)) show
+70  	-90 	moveto (avec le front (partie MOBILE)) show
+70  	-100 	moveto (lire la distance avec le repere (parie FIXE)) show
+
+
+
+
+
+
+%----------------------------------------------------------------------
+%
+% construction finale
+%
+%----------------------------------------------------------------------
+
+
+
+%closepath	%construct final line segment
+stroke		%
+showpage	%end program with ‘showpage’
