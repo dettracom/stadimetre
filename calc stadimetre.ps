@@ -165,8 +165,6 @@ decalage_horizontal 35 sub 	Hauteur_Ligne 479 sub 	moveto (18) show
 
 decalage_horizontal 35 sub 	Hauteur_Ligne 501 sub 	moveto (20) show
 
-decalage_horizontal 25 sub 	Hauteur_Ligne 520 sub 	moveto (credits : DETTRACOM) show
-
 
 
 
@@ -485,32 +483,61 @@ stroke				% dessine les trais (pour que les traits soit noir)
 
 
 
-020  	-080 	moveto (instructions de fabrication :) show
-030  	-100 	moveto (couper les lignes grises pointillees) show
-030  	-110 	moveto (retirer le petit rectangle central) show
-
-030  	-130 	moveto (plastifier les bandes RECTO,) show
-030  	-140 	moveto (VERSO et MOBILE) show
-030  	-150 	moveto (/!\\ espacer les bandes de 1 cm /!\\) show
-030  	-160 	moveto (/!\\ dans la plastifieuse /!\\) show
-
-030  	-180 	moveto (decouper les bandes) show
-030  	-190 	moveto (laisser 0.5 cm de marge sur les cotes) show
-
-030  	-210 	moveto (mettre les bandes recto et verso ) show
-030  	-220 	moveto (faces vers le haut) show
-030  	-230 	moveto (droitiers : verso a gauche) show
-030  	-240 	moveto (gauchers : verso a droite) show
-
-030  	-260 	moveto (scotcher les deux bandes) show
-030  	-270 	moveto (retourner et scotcher l'autre face) show
-030  	-280 	moveto (fermer comme un livre) show
-030  	-290 	moveto (glisser la bande mobile au milieu) show
+%----------------------------------------------------------------------
+%
+% zones de textes
+%
+%----------------------------------------------------------------------
 
 
+020  	-050 	moveto (instructions de fabrication :) show
+030  	-070 	moveto (couper les lignes grises pointillees) show
+030  	-080 	moveto (retirer le petit rectangle central) show
+030  	-100 	moveto (plastifier les bandes RECTO,) show
+030  	-110 	moveto (VERSO et MOBILE) show
+030  	-120 	moveto (/!\\ espacer les bandes de 1 cm /!\\) show
+030  	-130 	moveto (/!\\ dans la plastifieuse /!\\) show
+030  	-150 	moveto (decouper les bandes) show
+030  	-160 	moveto (laisser 0.5 cm de marge sur les cotes) show
+030  	-180 	moveto (mettre les bandes recto et verso ) show
+030  	-190 	moveto (faces vers le haut) show
+030  	-200 	moveto (droitiers : verso a gauche) show
+030  	-210 	moveto (gauchers : verso a droite) show
+030  	-230 	moveto (scotcher les deux bandes) show
+030  	-240 	moveto (retourner et scotcher l'autre face) show
+030  	-250 	moveto (fermer comme un livre) show
+030  	-260 	moveto (glisser la bande mobile au milieu) show
+030  	-280 	moveto (la partie mobile doit etre visible) show
+030  	-290 	moveto (au travers de la fenetre de RECTO) show
 
 
-730  	-80 	moveto (jeter ce rectangle) show
+
+
+720  	-050 	moveto (construction guide :) show
+730  	-070 	moveto (cut the dashed grey lines) show
+730  	-080 	moveto (cut out the rectangle inside RECTO) show
+730  	-100 	moveto (laminate the RECTO, VERSO) show
+730  	-110 	moveto (and MOBILE bands) show
+730  	-120 	moveto (/!\\ space out the bands by 1 cm /!\\) show
+730  	-130 	moveto (/!\\ before being laminated /!\\) show
+730  	-150 	moveto (separate the bands) show
+730  	-160 	moveto (keep 0.5 cm aroud all edges) show
+730  	-180 	moveto (put side by side the ) show
+730  	-190 	moveto (RECTO and VERSO bands) show
+730  	-200 	moveto (printed side up) show
+730  	-210 	moveto (right-handed : RECTO on the right) show
+730  	-220 	moveto (left-handed : recto on the left) show
+730  	-240 	moveto (joint both bands with clear tape) show
+730  	-250 	moveto (flip up and tape the other side) show
+730  	-260 	moveto (close like a book) show
+730  	-270 	moveto (put the MOBILE band inside) show
+730  	-290 	moveto (you should be able to see) show
+730  	-300 	moveto (the MOBILE band through) show
+730  	-310 	moveto (the window on RECTO) show
+
+
+
+
 
 stroke				% dessine les trais (pour que les traits soit gris)
 0 0 0 setrgbcolor		% passe la couleur en noir
@@ -533,10 +560,15 @@ stroke				% dessine les trais (pour que les traits soit gris)
 180  	-200 	moveto (front : 1.7 m) show
 180  	-210 	moveto (distance = 880 m) show
 
-180  	-190 	moveto (angle : 10 MRAD) show
-180  	-200 	moveto (front : 0.8 m) show
-180  	-210 	moveto (repere : /2) show
-180  	-220 	moveto (distance = 80 m) show
+180  	-230 	moveto (angle : 10 MRAD) show
+180  	-240 	moveto (front : 0.8 m) show
+180  	-250 	moveto (repere : /2) show
+180  	-260 	moveto (distance = 80 m) show
+
+170  	-560 	moveto (credits :) show
+180  	-570 	moveto (DETTRACOM (Github)) show
+
+
 
 
 220  	-35 	moveto (VERSO) show
