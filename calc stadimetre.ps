@@ -4,7 +4,7 @@
 
 90 rotate		% met la feuille a l'horizontale 
 0.5 setlinewidth	% reglage de la largeur des traits
-/Times 7 selectfont 	%select your font
+/Times 7 selectfont 	% reglage de la police d'ecriture
 
 
 
@@ -64,7 +64,7 @@
 
 
 /Hauteur_Ligne -50 def	% defini la hauteur du point de depart pour la ligne des milliemes (normalement constant pour les 4 lignes)
-/decalage_horizontal 347 def	% defini la largeur du point de depart pour la ligne des milliemes (propre à chaque lignes)
+/decalage_horizontal 371 def	% defini le decalage au bord droit de la feuille pour la ligne des milliemes (propre à chaque lignes)
 decalage_horizontal Hauteur_Ligne moveto	% va au point de depart
 
 
@@ -165,6 +165,8 @@ decalage_horizontal 35 sub 	Hauteur_Ligne 479 sub 	moveto (18) show
 
 decalage_horizontal 35 sub 	Hauteur_Ligne 501 sub 	moveto (20) show
 
+decalage_horizontal 25 sub 	Hauteur_Ligne 520 sub 	moveto (credits : DETTRACOM) show
+
 
 
 
@@ -180,17 +182,28 @@ decalage_horizontal 35 sub 	Hauteur_Ligne 501 sub 	moveto (20) show
 
 
 /Hauteur_Ligne -50 def	%defini la hauteur du point de depart de la ligne 2
-/decalage_horizontal 477 def	%defini la largeur du point de depart de la ligne 2
+/decalage_horizontal 473 def	%defini la largeur du point de depart de la ligne 2
 
-decalage_horizontal 		Hauteur_Ligne 		moveto
-decalage_horizontal 		Hauteur_Ligne 501 sub 	lineto
-decalage_horizontal 		Hauteur_Ligne 200 sub 	moveto
+decalage_horizontal 		Hauteur_Ligne 			moveto % trace l'axe
+decalage_horizontal 		Hauteur_Ligne 502 sub 	lineto
+
+decalage_horizontal 		Hauteur_Ligne 200 sub 	moveto % trace le repere de lecture principal
 decalage_horizontal 20 add 	Hauteur_Ligne 200 sub 	lineto
 
+decalage_horizontal 		Hauteur_Ligne 049 sub 	moveto % trace le repere de lecture  X2
+decalage_horizontal 10 add 	Hauteur_Ligne 049 sub 	lineto
+
+decalage_horizontal 		Hauteur_Ligne 351 sub 	moveto % trace le repere de lecture  /2
+decalage_horizontal 10 add 	Hauteur_Ligne 351 sub 	lineto
+
+decalage_horizontal 		Hauteur_Ligne 502 sub 	moveto % trace le repere de lecture  /4
+decalage_horizontal 10 add 	Hauteur_Ligne 502 sub 	lineto
 
 
-decalage_horizontal 10 add 	Hauteur_Ligne 190 sub 	moveto (lire la distance) show
-decalage_horizontal 30 add 	Hauteur_Ligne 200 sub 	moveto (ici) show
+
+decalage_horizontal 10 add 	Hauteur_Ligne 180 sub 	moveto (lire la) show
+decalage_horizontal 10 add 	Hauteur_Ligne 190 sub 	moveto (distance) show
+decalage_horizontal 25 add 	Hauteur_Ligne 200 sub 	moveto (ici) show
 
 
 
@@ -212,7 +225,7 @@ decalage_horizontal 30 add 	Hauteur_Ligne 200 sub 	moveto (ici) show
 
 
 /Hauteur_Ligne -201 def	% defini la hauteur (ordonnee) du point de depart pour la ligne 3
-/decalage_horizontal 623 def	% defini la largeur (abscisse) du point de depart pour la ligne 3
+/decalage_horizontal 558 def	% defini la largeur (abscisse) du point de depart pour la ligne 3
 decalage_horizontal Hauteur_Ligne moveto	% va au point de depart
 
 
@@ -281,7 +294,7 @@ decalage_horizontal Hauteur_Ligne moveto	% va au point de depart
 
 
 
-decalage_horizontal 15 add 	Hauteur_Ligne -170 sub 	moveto (front(m)) show
+decalage_horizontal 10 add 	Hauteur_Ligne -170 sub 	moveto (front(m)) show
 
 decalage_horizontal 25 add 	Hauteur_Ligne -151 sub 	moveto (0.5) show
 
@@ -328,7 +341,7 @@ decalage_horizontal 25 add 	Hauteur_Ligne 350 sub 	moveto (5) show
 
 
 /Hauteur_Ligne -50 def	% defini la hauteur du point de depart pour la ligne 4
-/decalage_horizontal 753 def	% defini la largeur du point de depart pour la ligne 4
+/decalage_horizontal 660 def	% defini la largeur du point de depart pour la ligne 4
 decalage_horizontal Hauteur_Ligne moveto	% va au point de depart
 
 
@@ -345,16 +358,39 @@ decalage_horizontal Hauteur_Ligne moveto	% va au point de depart
 140 10 graduation
 
 151 20 graduation		% marque 200
-177 10 graduation
+162 10 graduation
+172 10 graduation
+181 10 graduation
+191 10 graduation
 
 200 20 graduation		% marque 250
-220 10 graduation
+208 10 graduation
+216 10 graduation
+224 10 graduation
+232 10 graduation
+
 
 239 20 graduation		% marque 300
+246 05 graduation
+253 05 graduation
+260 05 graduation
+267 05 graduation
 273 10 graduation
+279 05 graduation
+285 05 graduation
+291 05 graduation
+296 05 graduation
 
 302 20 graduation		% marque 400
+307 05 graduation
+313 05 graduation
+318 05 graduation
+323 05 graduation
 328 10 graduation
+332 05 graduation
+337 05 graduation
+342 05 graduation
+346 05 graduation
 
 351 20 graduation		% marque 500
 371 10 graduation
@@ -375,7 +411,7 @@ decalage_horizontal Hauteur_Ligne moveto	% va au point de depart
 
 
 
-decalage_horizontal 35 sub 	Hauteur_Ligne -020 sub 	moveto (dist(m)) show
+decalage_horizontal 25 sub 	Hauteur_Ligne -020 sub 	moveto (dist(m)) show
 
 decalage_horizontal 45 sub 	Hauteur_Ligne 000 sub 	moveto (100) show
 
@@ -420,39 +456,76 @@ stroke				% dessine les trais (pour que les traits soit noir)
 
 
 0.5 0.5 0.5 setrgbcolor		% passe la couleur en gris
+[5 5] 0 setdash			% test du SETDASH
 
 
-274 	0 	moveto		% dessine la double ligne à plier
-274 	-650 	lineto		%
-276 	0 	moveto		%
-276 	-650 	lineto		%
+329 	0 	moveto		% dessine la double ligne à plier
+329 	-650 	lineto		%
+%330 	0 	moveto		%
+%330 	-650 	lineto		%
 
-556 	0 	moveto		% dessine la separation entre mobile et fixe (à decouper)
-556 	-650 	lineto		%
+142 	0 	moveto		% dessine la separation entre verso et montage1 (à decouper)
+142 	-650 	lineto		%
+516 	0 	moveto		% dessine la separation entre fixe et mobile (à decouper)
+516 	-650 	lineto		%
+703 	0 	moveto		% dessine la separation entre distance et montage2 (à decouper)
+703 	-650 	lineto		%
 
-349 	-50 	moveto		% dessine le rectangle gris à retirer (partie fixe)
-349 	-550 	lineto		%
-475 	-550 	lineto		%
-475 	-50 	lineto		%
-349 	-50 	lineto		%
 
-377  	-80 	moveto (plier la double ligne grise) show
-377  	-90 	moveto (et couper les autres) show
+372 	-50 	moveto		% dessine le rectangle gris à retirer (partie fixe)
+372 	-552 	lineto		%
+472 	-552 	lineto		%
+472 	-50 	lineto		%
+372 	-50 	lineto		%
+385  	-250 	moveto (retirer ce rectangle gris) show
 
-377  	-400 	moveto (retirer ce rectangle gris) show
 
+
+
+020  	-080 	moveto (instructions de fabrication :) show
+030  	-100 	moveto (couper les lignes grises pointillees) show
+030  	-110 	moveto (retirer le petit rectangle central) show
+
+030  	-130 	moveto (plastifier les bandes RECTO,) show
+030  	-140 	moveto (VERSO et MOBILE) show
+030  	-150 	moveto (/!\\ espacer les bandes de 1 cm /!\\) show
+030  	-160 	moveto (/!\\ dans la plastifieuse /!\\) show
+
+030  	-180 	moveto (decouper les bandes) show
+030  	-190 	moveto (laisser 0.5 cm de marge sur les cotes) show
+
+030  	-210 	moveto (mettre les bandes recto et verso ) show
+030  	-220 	moveto (faces vers le haut) show
+030  	-230 	moveto (droitiers : verso a gauche) show
+030  	-240 	moveto (gauchers : verso a droite) show
+
+030  	-260 	moveto (scotcher les deux bandes) show
+030  	-270 	moveto (retourner et scotcher l'autre face) show
+030  	-280 	moveto (fermer comme un livre) show
+030  	-290 	moveto (glisser la bande mobile au milieu) show
+
+
+
+
+730  	-80 	moveto (jeter ce rectangle) show
 
 stroke				% dessine les trais (pour que les traits soit gris)
 0 0 0 setrgbcolor		% passe la couleur en noir
 
-50  	-30 	moveto (utilisation :) show
-70  	-50 	moveto (glisser la partie MOBILE (Front et Dist)) show
-70  	-60 	moveto (derriere la partie FIXE(angle)) show
 
-70  	-80 	moveto (faire correspondre l'angle observe (partie FIXE)) show
-70  	-90 	moveto (avec le front (partie MOBILE)) show
-70  	-100 	moveto (lire la distance avec le repere (parie FIXE)) show
 
+170  	-50 	moveto (utilisation :) show
+180  	-70 	moveto (glisser la bande MOBILE (Front et Dist)) show
+180  	-80 	moveto (derriere la bande RECTO (angle)) show
+
+180  	-100 	moveto (faire correspondre l'angle observe (bande RECTO)) show
+180  	-110 	moveto (avec le front (bande MOBILE)) show
+180  	-120 	moveto (lire la distance avec le repere (bande RECTO)) show
+
+
+220  	-35 	moveto (VERSO) show
+415  	-35 	moveto (RECTO) show
+600  	-35 	moveto (MOBILE) show
 
 
 
