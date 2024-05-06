@@ -176,12 +176,12 @@ decalage_horizontal 25 sub 	Hauteur_Ligne 520 sub 	moveto (credits : DETTRACOM) 
 
 %XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 %
-% repere de lecture
+% reperes de lecture
 %
 %XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
-/Hauteur_Ligne -50 def	%defini la hauteur du point de depart de la ligne 2
+/Hauteur_Ligne -50 def			%defini la hauteur du point de depart de la ligne 2
 /decalage_horizontal 473 def	%defini la largeur du point de depart de la ligne 2
 
 decalage_horizontal 		Hauteur_Ligne 			moveto % trace l'axe
@@ -189,21 +189,24 @@ decalage_horizontal 		Hauteur_Ligne 502 sub 	lineto
 
 decalage_horizontal 		Hauteur_Ligne 200 sub 	moveto % trace le repere de lecture principal
 decalage_horizontal 20 add 	Hauteur_Ligne 200 sub 	lineto
-
-decalage_horizontal 		Hauteur_Ligne 049 sub 	moveto % trace le repere de lecture  X2
-decalage_horizontal 10 add 	Hauteur_Ligne 049 sub 	lineto
-
-decalage_horizontal 		Hauteur_Ligne 351 sub 	moveto % trace le repere de lecture  /2
-decalage_horizontal 10 add 	Hauteur_Ligne 351 sub 	lineto
-
-decalage_horizontal 		Hauteur_Ligne 502 sub 	moveto % trace le repere de lecture  /4
-decalage_horizontal 10 add 	Hauteur_Ligne 502 sub 	lineto
-
-
-
 decalage_horizontal 10 add 	Hauteur_Ligne 180 sub 	moveto (lire la) show
 decalage_horizontal 10 add 	Hauteur_Ligne 190 sub 	moveto (distance) show
 decalage_horizontal 25 add 	Hauteur_Ligne 200 sub 	moveto (ici) show
+
+decalage_horizontal 		Hauteur_Ligne 049 sub 	moveto % trace le repere de lecture  X2
+decalage_horizontal 10 add 	Hauteur_Ligne 049 sub 	lineto
+decalage_horizontal 25 add 	Hauteur_Ligne 049 sub 	moveto (X2) show
+
+decalage_horizontal 		Hauteur_Ligne 351 sub 	moveto % trace le repere de lecture  /2
+decalage_horizontal 10 add 	Hauteur_Ligne 351 sub 	lineto
+decalage_horizontal 25 add 	Hauteur_Ligne 351 sub 	moveto (/2) show
+
+decalage_horizontal 		Hauteur_Ligne 502 sub 	moveto % trace le repere de lecture  /4
+decalage_horizontal 10 add 	Hauteur_Ligne 502 sub 	lineto
+decalage_horizontal 25 add 	Hauteur_Ligne 502 sub 	moveto (/4) show
+
+
+
 
 
 
@@ -515,12 +518,25 @@ stroke				% dessine les trais (pour que les traits soit gris)
 
 
 170  	-50 	moveto (utilisation :) show
-180  	-70 	moveto (glisser la bande MOBILE (Front et Dist)) show
-180  	-80 	moveto (derriere la bande RECTO (angle)) show
+180  	-70 	moveto (glisser la bande MOBILE) show
+180  	-80 	moveto (entre les bandes RECTO et VERSO) show
 
 180  	-100 	moveto (faire correspondre l'angle observe (bande RECTO)) show
 180  	-110 	moveto (avec le front (bande MOBILE)) show
 180  	-120 	moveto (lire la distance avec le repere (bande RECTO)) show
+180  	-130 	moveto (si le repere est hors de l'axe de la distance) show
+180  	-140 	moveto (utiliser les repere X2, /2 ou /4 et) show
+180  	-150 	moveto (faire l'operation associé) show
+
+170  	-180 	moveto (exemple :) show
+180  	-190 	moveto (angle : 2.5 MRAD) show
+180  	-200 	moveto (front : 1.7 m) show
+180  	-210 	moveto (distance = 880 m) show
+
+180  	-190 	moveto (angle : 10 MRAD) show
+180  	-200 	moveto (front : 0.8 m) show
+180  	-210 	moveto (repere : /2) show
+180  	-220 	moveto (distance = 80 m) show
 
 
 220  	-35 	moveto (VERSO) show
